@@ -1,0 +1,141 @@
+const quotes = [
+  {
+    quote: "It is well with my soul.",
+    author: "Unknown"
+  },
+  {
+    quote: "Just do the best you can.",
+    author: "The Author"
+  },
+  {
+    quote: "I am as bad as the worst, but, thank God, I am as good as the best.",
+    author: "Oscar Wilde"
+  },
+  {
+    quote:
+    "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+    author: "Albert Einstein"
+  },
+  { quote: "I'm selfish, impatient, and a little insecure. I make mistakes, I'm out of control, and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.", 
+   author: "Marily Manroe" },
+  {
+    quote: "A room without books is like a body without a soul.",
+    author: "Marcus Tullius Cicero"
+  },
+  {
+    quote:
+    "If a man does his best, what else is there?.",
+    author: "George Patterson"
+  }
+];
+
+const getRandomInt = function(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+};
+
+const Text = props => {
+  return <div id="text">{props.text}</div>;
+};
+
+const Author = props => {
+  return <span id="author">{props.text}</span>;
+};
+
+const Tweet = props => {
+  return (
+    <a
+      id="tweet-quote"
+      className="button"
+      href={"https://www.twitter.com/intent/tweet".concat(props.tweet)}
+      target="_blank"
+      >
+      <i className="fab fa-twitter" />
+    </a>
+  );
+};
+
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleClick = () => {
+    console.log("Click happened in Button");
+    this.props.handleClick();
+  };
+
+render() {
+  return (
+    <button onClick={this.handleClick} type="button" id="new-quote">
+      {this.props.children}
+    </button>
+  );
+}
+}
+
+class QuoteBox extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      quote: this.props.quote,
+      author: this.props.author
+    };
+  }
+
+  handleClick = () => {
+    console.log("Click handled by QuoteBox");    
+    let index = getRandomInt(quotes.length);
+    do {
+      index = getRandomInt(quotes.length);
+    }
+    while (this.state.quote === quotes[index].quote)
+             
+    this.setState(prevState => ({
+      quote: quotes[index].quote,
+      author: quotes[index].author
+    }));
+  };
+
+render() {
+  return (
+    <div id="quote-box">
+      <blockquote>
+        <Text text={this.state.quote} />
+        <cite>
+          <Author text={this.state.author} />
+        </cite>
+      </blockquote>
+
+      <div id="action">
+        <Tweet
+          tweet={encodeURI(
+            "?hashtags=quotes&related=freeCodeCamp&text="
+            .concat(this.state.quote)
+            .concat(" ")
+            .concat(this.state.author)
+          )}
+          />
+        <Button handleClick={this.handleClick}>Quote</Button>
+      </div>
+    </div>
+  );
+}
+}
+
+class Quote extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <QuoteBox
+        quote="The best way to find yourself is to lose yourself in the service of others.."
+        author="Mahatman Gandhi"
+        />
+    );
+  }
+}
+
+ReactDOM.render(<Quote />, document.getElementById("app"));

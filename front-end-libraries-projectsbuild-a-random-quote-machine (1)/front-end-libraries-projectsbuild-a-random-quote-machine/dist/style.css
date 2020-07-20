@@ -1,0 +1,202 @@
+body {
+  background: #bca2b9;
+}
+
+#app {
+}
+
+#quote-box {
+
+  position: fixed;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  /*  own prefixes */
+  transform: translate(-50%, -50%);
+  body {
+    background: #a2bca5;
+  }
+
+  #app {
+  }
+
+  #quote-box {
+
+    position: fixed;
+    display: inline-block;
+    top: 80%;
+    left: 80%;
+    
+ 
+    transform: translate(-50%, -50%);
+
+    margin: auto;
+
+
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    background: #65b95;
+
+    display: grid;
+    grid-template-rows: 6fr 2fr 1fr;
+  }
+
+  blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #202c21;
+  }
+
+  blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -5px;
+    top: -20px;
+    color: #7a7a7a;
+  }
+
+  blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+  }
+
+  blockquote cite:before {
+    content: "\2018 \2005";
+  }
+
+  #action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  button {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #6b5b95;
+    border: none;
+    color: white;
+    outline: none;
+  }
+
+  button:hover {
+    color: #6b5b95;
+    background-color: white;
+    border: none;
+  }
+
+  a.button {
+    appearance: button;
+
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2.5em;
+    cursor: pointer;
+    background-color: #6b5b95;
+    color: white;
+  }
+
+  a.button:hover {
+    color: #6b5b95;
+    background-color: white;
+  }
+
+  margin: auto;
+
+
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  background: #6b5b95;
+
+
+  display: grid;
+  grid-template-rows: auto auto 5px;
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\0022";
+  font-size: 80px;
+  position: absolute;
+  left: -5px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
+}
+
+#action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #202c21;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+button:hover {
+  color: #6b5b95;
+  background-color: white;
+  border: none;
+}
+
+a.button {
+  appearance: button;
+
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 2.5em;
+  cursor: pointer;
+  background-color: #6b5b95;
+  color: white;
+}
+
+a.button:hover {
+  color: #6b5b95;
+  background-color: white;
+}

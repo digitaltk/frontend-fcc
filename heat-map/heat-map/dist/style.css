@@ -1,0 +1,23 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+#wrapper {
+  min-width: 200px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: blue;
+  position: relative;
+  padding: 2em;
+}
+
+#tooltip {
+  position: absolute;
+  padding: 15px;
+}

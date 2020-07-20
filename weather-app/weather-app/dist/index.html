@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Weather App</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
+<link rel='stylesheet' href='https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body class="bg-dark text-light text-center">
+  Please Note <br>
+  This app will only work if you allow it to use your location
+  <h1 class="display-1 my-3">Weather App</h1>
+  <div id="error"></div>
+  <div class="item">
+    <h2>Location</h2>
+    <div id="loc" class="lead"></div>
+  </div>
+  <div class="item">
+    <h2>Temperature</h2>
+    <div id="temp" class="lead"></div>
+    <input type="checkbox" checked data-toggle="toggle" data-on="℃" data-off="°F" data-onstyle="warning" data-offstyle="info">
+  </div>
+  <div class="item">
+    <h2>Weather</h2>
+    <div id="desc" class="lead"></div>
+    <img id="icon">
+  </div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js'></script>
+<script src='https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
